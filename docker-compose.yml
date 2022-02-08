@@ -1,0 +1,19 @@
+version: '3'
+services:
+    jupyter:
+        tty: true
+        stdin_open: true
+        build:
+            context: .
+            dockerfile: Dockerfile
+        user: root
+        entrypoint: "start.sh"
+        command: "jupyter lab --LabApp.token='' --NotebookApp.iopub_data_rate_limit=1.0e10"
+        volumes:
+            - ./work:/home/jovyan/work
+        ports:
+            - "8888:8888"
+        environment: 
+            - GRANT_SUDO=yes
+        env_file:
+            - ".env"

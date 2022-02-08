@@ -1,0 +1,2 @@
+docker run --rm -p 10001:8888 -p 10001:8000 -e JUPYTER_ENABLE_LAB=yes -v "$PWD/work":/home/jovyan/work jupyter/datascience-notebook:9b06df75e445
+docker run --rm -p 10000:8888 -p 10001:8000 -e JUPYTER_ENABLE_LAB=yes -v "$PWD/work":/home/jovyan/work jupyter/datascience-notebook
